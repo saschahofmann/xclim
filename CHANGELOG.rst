@@ -6,6 +6,17 @@ v0.61.0 (2026-05-07)
 --------------------
 Contributors to this version: Pascal Bourgault (:user:`aulemahal`), Trevor James Smith (:user:`Zeitsperre`), Hui-Min Wang (:user:`Hem-W`), Éric Dupuis (:user:`coxipi`).
 
+Announcements
+^^^^^^^^^^^^^
+The next significant release of `xclim` will be v1.0.0. This new version will include several breaking changes including:
+* Migration of ``xclim.indices`` module into the new ``xclim.compute`` module for more efficient indicator composition.
+* ``xclim.indicators.generic`` refactoring to remove lots of redundant code in favour of more standardized and easier-to-use primitive functions.
+* More consistent support for seasonal analyses across indicators, and much more.
+
+Users should expect that existing scripts may need to be updated in order to continue operating as usual. The `xclim` developers may release some patch versions to address small issues before `v1.0`.
+We suggest temporarily pinning `xclim < 1.0.0` if your workflows require significant effort to adapt to changes, particularly if they depend on direct calls within ``xclim.indices``.
+A migration guide will be made available within the official documentation.
+
 New indicators and features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 * ``xclim.indices.generic.doymin`` and ``xclim.indices.generic.doymax`` will now return `nan` if all values along the time axis are the same. They now also support all-nan arrays (:pull:`2314`).
